@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chá revelação – Elisa ou Antônio?</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Mulish:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf8f4;--ink:#8a5e4f;--pink:#d46f90;--blue:#5f9db3;--card:#fff;--line:#ecdcd3;--cloud:#d8e8f2;--rope:#e8b4a0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a2220;--ink:#e8cfc4;--pink:#ee8fab;--blue:#85bfd3;--card:#352b28;--line:#4a3b36;--cloud:#34444d;--rope:#8a5e4f}}
+:root[data-theme="dark"]{--bg:#2a2220;--ink:#e8cfc4;--pink:#ee8fab;--blue:#85bfd3;--card:#352b28;--line:#4a3b36;--cloud:#34444d;--rope:#8a5e4f}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Mulish,system-ui,sans-serif;line-height:1.55;overflow-x:hidden}
+.script{font-family:'Dancing Script',cursive,serif;font-weight:600}
+.wrap{max-width:560px;margin:0 auto;padding:0 20px}
+.hero{position:relative;text-align:center;padding-top:36px;overflow:hidden}
+.cloud{position:absolute;background:var(--cloud);border-radius:50%;filter:blur(16px);opacity:.9}
+.c1{width:220px;height:110px;left:-80px;top:20px}.c2{width:200px;height:100px;right:-90px;top:70px}.c3{width:160px;height:80px;left:-60px;top:360px}
+h1{position:relative;font-size:clamp(3.4rem,17vw,5.4rem);line-height:.95;margin:0 0 4px}
+.line{position:relative;width:100%;height:auto;display:block;margin-top:-4px}
+.sway{animation:sway 3.2s ease-in-out 1 both}
+.sway.b{animation-delay:.25s}
+@keyframes sway{0%{transform:rotate(0)}25%{transform:rotate(5deg)}55%{transform:rotate(-4deg)}80%{transform:rotate(2deg)}100%{transform:rotate(0)}}
+@media (prefers-reduced-motion:reduce){.sway{animation:none}}
+.names{position:relative;display:flex;justify-content:center;align-items:baseline;gap:.5em;font-weight:800;font-size:clamp(1.5rem,7.4vw,2.3rem);letter-spacing:.1em;margin:6px 0 8px}
+.names .e{color:var(--pink)}.names .a{color:var(--blue)}.names .o{font-size:.7em}
+.lead{margin:0 auto 6px;max-width:28ch;font-size:1.05rem}
+.date{margin:26px 0 0;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:22px 16px;text-align:center;box-shadow:0 10px 30px -18px var(--ink)}
+.date .big{font-size:clamp(2.3rem,11vw,3.3rem);line-height:1.05}
+.date .sub{font-weight:700;letter-spacing:.05em}
+#count{display:flex;justify-content:center;gap:8px;margin-top:16px}
+#count div{flex:1;max-width:76px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:8px 0}
+#count b{display:block;font-size:1.5rem;line-height:1.1}
+#count span{font-size:.72rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 14px;text-align:center}
+.tile .ic{font-size:1.9rem;line-height:1}
+.tile strong{display:block;margin:8px 0 2px;font-size:1.02rem}
+.tile p{margin:0;font-size:.92rem}
+.tile.wide{grid-column:1/-1}
+.tile a{color:var(--blue);font-weight:800}
+
+/* Confirmação de presença */
+.rsvp{margin:22px 0 0;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:24px 18px;box-shadow:0 10px 30px -18px var(--ink)}
+.rsvp h2{margin:0;text-align:center;font-size:2.2rem}
+.rsvp .hint{margin:2px 0 16px;text-align:center}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.choice button{background:var(--bg);color:var(--ink);border:2px solid var(--line);border-radius:18px;padding:14px 8px;font:inherit;font-weight:800;cursor:pointer;line-height:1.3}
+.choice button span{display:block;font-size:1.6rem}
+.choice button[aria-pressed="true"].yes{border-color:var(--pink);background:color-mix(in srgb,var(--pink) 16%,var(--card))}
+.choice button[aria-pressed="true"].no{border-color:var(--blue);background:color-mix(in srgb,var(--blue) 16%,var(--card))}
+label{display:block;font-weight:800;margin:0 0 6px}
+input[type=text],textarea{width:100%;font:inherit;padding:13px 14px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);margin-bottom:14px}
+textarea{resize:vertical;min-height:72px}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.step{display:flex;align-items:center;justify-content:space-between;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:6px}
+.step button{width:38px;height:38px;border-radius:50%;border:0;background:var(--card);color:var(--ink);font:inherit;font-size:1.3rem;font-weight:800;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+.step output{font-weight:800;font-size:1.15rem}
+#go{width:100%;font:inherit;font-weight:800;padding:16px;border:0;border-radius:999px;color:#fff;cursor:pointer;background:linear-gradient(90deg,#d46f90,#5f9db3);font-size:1.02rem}
+#go:disabled{opacity:.55;cursor:not-allowed}
+.small{text-align:center;font-size:.82rem;margin:10px 0 0;opacity:.85}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+footer{text-align:center;padding:26px 0 40px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <i class="cloud c1"></i><i class="cloud c2"></i><i class="cloud c3"></i>
+  <h1 class="script">Chá<br>revelação</h1>
+  <svg class="line" viewBox="0 0 400 190" aria-hidden="true">
+    <path d="M-5 20 Q200 70 405 20" fill="none" stroke="var(--rope)" stroke-width="2"/>
+    <g class="sway" style="transform-origin:120px 44px">
+      <path d="M92 44 l6 10 M104 47 l-6 8" stroke="var(--rope)" stroke-width="2" fill="none"/>
+      <path d="M96 52 L108 52 L120 70 L132 52 L144 52 L146 85 L168 160 Q120 184 72 160 L94 85Z" fill="#e8a0b8"/>
+      <path d="M92 52 q-14 -8 -8 -18 q10 4 12 14z M144 52 q14 -8 8 -18 q-10 4 -12 14z" fill="#d46f90"/>
+      <rect x="90" y="108" width="20" height="20" rx="5" fill="#cf7a9c"/><rect x="130" y="108" width="20" height="20" rx="5" fill="#cf7a9c"/>
+      <path d="M72 160 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0 q6 8 12 0" fill="#e8a0b8"/>
+    </g>
+    <g class="sway b" style="transform-origin:280px 44px">
+      <path d="M272 47 l6 8 M288 44 l-6 10" stroke="var(--rope)" stroke-width="2" fill="none"/>
+      <path d="M256 52 L270 52 L280 66 L290 52 L304 52 L308 85 L322 165 L238 165 L252 85Z" fill="#8fbfd2"/>
+      <circle cx="280" cy="84" r="3" fill="#cfe6ef"/><circle cx="280" cy="98" r="3" fill="#cfe6ef"/><circle cx="280" cy="112" r="3" fill="#cfe6ef"/>
+      <rect x="252" y="118" width="22" height="22" rx="5" fill="#5f9db3"/><rect x="290" y="118" width="22" height="22" rx="5" fill="#5f9db3"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <p class="names"><span class="e">ELISA</span><span class="o">OU</span><span class="a">ANTÔNIO?</span></p>
+    <p class="lead">Preparados para a revelação? Vamos descobrir juntos!</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="date">
+    <div class="big script">17 de outubro</div>
+    <div class="sub">sábado · 15:00</div>
+    <div id="count"></div>
+  </section>
+
+  <section class="grid">
+    <div class="tile wide"><div class="ic">📍</div><strong>Local</strong><p>Av. Marcelina Neves Silva, 540<br>Parque das Laranjeiras – Uberaba</p><p><a href="https://www.google.com/maps/search/?api=1&query=Av.+Marcelina+Neves+Silva+540+Parque+das+Laranjeiras+Uberaba" target="_blank" rel="noopener">Abrir no mapa</a></p></div>
+    <div class="tile"><div class="ic">🧥</div><strong>Traje</strong><p>Branco ou bege (nude). Leve também um traje de banho, se quiser ☀️</p></div>
+    <div class="tile"><div class="ic">🎁</div><strong>Presente</strong><p>Fralda (M ou G) ou um mimo de sua preferência</p></div>
+    <div class="tile wide"><div class="ic">🥤</div><strong>Bebida</strong><p>Leve a sua bebida</p></div>
+  </section>
+
+  <section class="rsvp" id="rsvp">
+    <h2 class="script">Confirme sua presença</h2>
+    <p class="hint">Leva menos de um minuto 💛</p>
+
+    <div class="choice" role="group" aria-label="Você vai?">
+      <button type="button" class="yes" id="yes" aria-pressed="false"><span>🎉</span>Estarei lá!</button>
+      <button type="button" class="no" id="no" aria-pressed="false"><span>💌</span>Não poderei ir</button>
+    </div>
+
+    <label for="nome">Seu nome</label>
+    <input id="nome" type="text" placeholder="Ex.: Maria Silva" autocomplete="name">
+
+    <div id="grupo">
+      <label>Quantas pessoas?</label>
+      <div class="people">
+        <div>
+          <div class="step"><button type="button" data-t="ad" data-d="-1" aria-label="Menos adultos">−</button><output id="ad">1</output><button type="button" data-t="ad" data-d="1" aria-label="Mais adultos">+</button></div>
+          <div class="small">adultos</div>
+        </div>
+        <div>
+          <div class="step"><button type="button" data-t="cr" data-d="-1" aria-label="Menos crianças">−</button><output id="cr">0</output><button type="button" data-t="cr" data-d="1" aria-label="Mais crianças">+</button></div>
+          <div class="small">crianças</div>
+        </div>
+      </div>
+    </div>
+
+    <label for="msg" style="margin-top:14px">Recado para os papais (opcional)</label>
+    <textarea id="msg" placeholder="Deixe um carinho ou diga o que vai levar 🥰"></textarea>
+
+    <button id="go" type="button" disabled>Escolha uma opção acima</button>
+    <p class="small">Vai abrir o WhatsApp com a mensagem pronta. É só enviar.</p>
+  </section>
+  <footer>Esperamos vocês! 🥰✨</footer>
+</main>
+
+<script>
+var alvo=new Date("2026-10-17T15:00:00-03:00"),c=document.getElementById("count");
+function tick(){var d=alvo-new Date();if(d<=0){c.textContent="É hoje! 🎉";return}
+var v=[[Math.floor(d/864e5),"dias"],[Math.floor(d%864e5/36e5),"horas"],[Math.floor(d%36e5/6e4),"min"],[Math.floor(d%6e4/1e3),"seg"]];
+c.innerHTML=v.map(function(x){return "<div><b>"+x[0]+"</b><span>"+x[1]+"</span></div>"}).join("")}
+tick();setInterval(tick,1000);
+
+var vai=null,$=function(i){return document.getElementById(i)};
+var go=$("go"),grupo=$("grupo");
+function escolher(v){
+  vai=v;
+  $("yes").setAttribute("aria-pressed",v);
+  $("no").setAttribute("aria-pressed",!v);
+  grupo.style.display=v?"block":"none";
+  go.disabled=false;
+  go.textContent=v?"Confirmar pelo WhatsApp":"Avisar que não poderei ir";
+}
+$("yes").onclick=function(){escolher(true)};
+$("no").onclick=function(){escolher(false)};
+document.querySelectorAll(".step button").forEach(function(b){
+  b.onclick=function(){
+    var o=$(b.dataset.t),min=b.dataset.t==="ad"?1:0;
+    o.textContent=Math.max(min,Math.min(15,+o.textContent+ +b.dataset.d));
+  };
+});
+go.onclick=function(){
+  var n=$("nome").value.trim();
+  if(!n){$("nome").focus();$("nome").placeholder="Digite seu nome para continuar";return}
+  var m=$("msg").value.trim(),t;
+  if(vai){
+    var a=+$("ad").textContent,k=+$("cr").textContent;
+    t="Olá! Confirmo presença no chá revelação (17/10 às 15:00) 🎉\nNome: "+n+"\nAdultos: "+a+(k?"\nCrianças: "+k:"");
+  }else{
+    t="Olá! Infelizmente não poderei ir ao chá revelação 💌\nNome: "+n;
+  }
+  if(m)t+="\nRecado: "+m;
+  window.open("https://wa.me/5534991507902?text="+encodeURIComponent(t),"_blank");
+};
+</script>
+</body>
+      </html>
